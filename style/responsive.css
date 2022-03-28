@@ -1,0 +1,103 @@
+@media (max-width: 1000px) {
+    .shopping-basket-right {
+        display: none;
+    }
+
+    .my-location {
+        display: none;
+    }
+
+    .country-flag {
+        width: 22px;
+        height: 22px;
+        border: 2px solid white;
+        border-radius: 22px;
+    }
+
+    .account-menu-button {
+        width: 22px;
+    }
+
+    .logoandtext {
+        cursor: pointer;
+        width: 170px;
+    }
+
+    .individual-restaurant-image-logo {
+        height: 150px;
+    }
+
+    .individual-restaurant-logo {
+        width: 100px;
+        bottom: -50px;
+    }
+
+    .individual-restaurant-infos {
+        margin: 0px 20px;
+        margin-top: 30px;
+    }
+    
+
+    .meal-categories {
+        margin: 0px 20px;
+    }
+
+    .meal-category-links {
+        width: calc(100vw - 90px);
+        display: flex;
+        flex-wrap: nowrap;
+        gap: 12px;
+        white-space: nowrap;
+        overflow-x: scroll;
+    }
+
+    .meals {
+        margin: 0px 20px;
+    }
+
+    .meal-name {
+        padding-right: 4px;
+    }
+
+    /* damit es nicht rechts über Rand hinausläuft muss word-break gegeben werden */
+    .impressum {
+        margin: 0px 20px;
+        word-break: break-all;
+    }
+
+    .button-open-basket {
+        display: block;
+        position: fixed;
+        left: 0px;
+        right: 0px;
+        bottom: 0px;
+        height: 80px;
+        border: 12px solid white;
+        background-color: #166088;
+        color: white;
+        font-size: 16px;
+        cursor: pointer;
+    }
+
+    .button-open-basket:hover {
+        background-color: #216f99;
+    }
+    
+    .button-open-basket:active {
+        background-color: #135579;
+    }
+
+}
+
+@media (max-width: 500px) { 
+    .meal-categories-toborder {
+        display: none;
+    }
+}
+
+@media (max-width: 330px) { 
+    .add-remove-box {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+}

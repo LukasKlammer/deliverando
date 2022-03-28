@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Foodstro | deliverando.com</title>
+    <link rel="icon" type="image/x-icon" href="img/deliverando_logo.png">
+    <link rel="stylesheet" href="style/style.css">
+    <link rel="stylesheet" href="style/basket.css">
+    <link rel="stylesheet" href="style/responsive.css">
+
+    <script src="script/available_meals.js"></script>
+    <script src="script/render_meals.js"></script>
+    <script src="script/basket.js"></script>
+</head>
+
+<body onload="render()">
+
+    <div id="mainpage" class="">
+
+        <div class="deliverando-header-container">
+            <div class="logo-arrow">
+                <img class="arrow" src="img/arrow-backward_white.png" alt="">
+                <img class="logoandtext" src="img/deliverando_logo_text_white.png" alt="">
+            </div>
+            <span class="my-location">Münchnerstraße 34, Bruneck</span>
+            <div class="country-account">
+                <img class="country-flag" src="img/Flag_of_Germany.png" alt="">
+                <img class="account-menu-button" src="img/baseline_menu_white_36dp.png" alt="">
+            </div>
+        </div>
+
+        <div class="main-and-shopping-basket">
+            <div class="main">
+                <div class="individual-restaurant-header-container">
+                    <div class="individual-restaurant-image-logo">
+                        <img class="individual-restaurant-logo" src="img/foodstro_logo.png" alt="">
+                    </div>
+                    <div class="individual-restaurant-infos">
+                        <div>
+                            <h1>Foodstro</h1>
+                            <div>
+                                <img src="img/star-2-16.png" alt="">
+                                <img src="img/star-2-16.png" alt="">
+                                <img src="img/star-2-16.png" alt="">
+                                <img src="img/star-2-16.png" alt="">
+                                <img src="img/star-2-16.png" alt="">
+                                <span class="ratings">(458 Bewertungen)</span>
+                            </div>
+                        </div>
+                        <div class="info-like">
+                            <img class="info-icon" src="img/info-2-16.png" alt="" onclick="alert('easter egg: Schön, dass du da bist :-)')">
+                            <img class="like-icon" src="img/favorite-3-16.png" alt="">
+                        </div>
+                    </div>
+
+                    <div class="meal-categories-toborder">
+                        <div class="meal-categories">
+                            <img src="img/magnifying-glass-3-16.png" alt="">
+                            <div id="meal-category-links" class="meal-category-links">
+
+                            </div>
+                        </div>
+                    </div>
+                    <div id="meals" class="meals">
+
+                    </div>
+
+                    <div class="impressum">
+                        <h1>Impressum</h1>
+
+                        <h2>Angaben gem&auml;&szlig; &sect; 5 TMG</h2>
+                        <p>deliverando GmbH<br />
+                            Berlinerstra&szlig;e 99<br />
+                            60557 Musterstadt</p>
+
+                        <p>Handelsregister: HRB 999999<br />
+                            Registergericht: Amtsgericht Musterstadt</p>
+
+                        <p><strong>Vertreten durch:</strong><br />
+                            &#91;Firma und die Anschrift der als Komplement&auml;r eingetragenen GmbH&#93;</p>
+
+                        <p>Diese vertreten durch:<br />
+                            &#91;Namen der Gesch&auml;ftsf&uuml;hrer der GmbH&#93;</p>
+
+                        <p>Handelsregister: &#91;Nummer des Registereintrags&#93;<br />
+                            Registergericht: &#91;Name des Registergerichts&#93;</p>
+
+                        <h2>Kontakt</h2>
+                        <p>Telefon: &#91;Telefonnummer&#93;<br />
+                            E-Mail: &#91;E-Mail-Adresse&#93;</p>
+
+                        <h2>Umsatzsteuer-ID</h2>
+                        <p>Umsatzsteuer-Identifikationsnummer gem&auml;&szlig; &sect; 27 a Umsatzsteuergesetz:<br />
+                            DE999999999</p>
+
+                        <h2>EU-Streitschlichtung</h2>
+                        <p>Die Europ&auml;ische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
+                            <a href="https://ec.europa.eu/consumers/odr/" target="_blank"
+                                rel="noopener noreferrer">https://ec.europa.eu/consumers/odr/</a>.<br /> Unsere
+                            E-Mail-Adresse finden Sie oben im Impressum.
+                        </p>
+
+                        <h2>Verbraucher&shy;streit&shy;beilegung/Universal&shy;schlichtungs&shy;stelle</h2>
+                        <p>Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer
+                            Verbraucherschlichtungsstelle teilzunehmen.</p>
+
+                        <p>Quelle: <a href="https://www.e-recht24.de">e-recht24.de</a></p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="shopping-basket-right">
+                <div class="shopping-basket-content">
+                    <div class="shopping-basket-header">
+                        <h2>Warenkorb</h2>
+                    </div>
+                    <div class="basket" id="basket-right">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="footer-container">
+            <div class="footer-links">
+                <a href="#">Ein Restaurant empfehlen</a>
+                <a href="#">Ein Restaurant anmelden</a>
+                <a href="#">Jobs</a>
+                <a href="#">AGB</a>
+                <a href="#">Datenschutzerklärung</a>
+                <a href="#">Impressum</a>
+                <a href="#">Verwendung von Cookies</a>
+                <a href="#">Bug Bounty</a>
+                <a href="#">Ethik-Hotline</a>
+            </div>
+            <span>© 2022 deliverando.de</span>
+        </div>
+    </div>
+
+    <div id="shopping-basket-overlay" class="shopping-basket-overlay d-none">
+        <div class="shopping-basket-content">
+            <div class="shopping-basket-header">
+                <h2>Warenkorb</h2>
+                <img src="img/close-window-24.png" alt="" onclick="closeShoppingBasket()">
+            </div>
+            <div class="basket" id="basket-overlay">
+            </div>
+        </div>
+    </div>
+    
+    <button id="button-open-basket" class="button-open-basket" onclick="openShoppingBasket()">
+        <span>Warenkorb öffnen</span> 
+        <span id="button-open-basket-price"></span>
+    </button>
+
+
+</body>
+
+</html>

@@ -1,0 +1,173 @@
+.shopping-basket-right {
+    width: 350px;
+    background-color: #F8F5F2;
+    border: 1px solid grey;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+}
+
+.shopping-basket-content {
+    position: sticky;
+    top: 0px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 12px;
+}
+
+.shopping-basket-header {
+    border-bottom: 1px solid grey;
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.shopping-basket-header img{
+    cursor: pointer;
+}
+
+.shopping-basket-content h2 {
+    text-align: center;
+}
+
+.empty-basket {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: justify
+}
+
+.basket {
+    margin-left: 16px;
+    margin-right: 16px;
+}
+
+.basket-meal {
+    border-bottom: 1px solid grey;
+    display: flex;
+    flex-direction: column;
+}
+
+.amount-name-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.amount-name-price h4 {
+    width: 200px;
+    text-align: left;
+    padding-left: 8px;
+    padding-right: 8px;
+}
+
+.note-add-remove {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 37px;
+    margin-bottom: 16px;
+}
+
+.note-add-remove a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.savedNote {
+    margin-bottom: 12px;
+    margin-left: 32px;
+}
+
+.note-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.note-container textarea {
+    width: 100%;
+    resize: vertical;
+}
+
+.note-container-links {
+    margin-top: 12px;
+    margin-bottom: 20px;
+    display: flex;
+    gap: 8px;
+}
+
+.note-container-links a:hover {
+    cursor: pointer;
+    text-decoration: underline;
+}
+
+.d-none {
+    display: none;
+}
+
+.basket-item-amount {
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+}
+
+.basket-item-price {
+    margin-block-start: 1.33em;
+    margin-block-end: 1.33em;
+}
+
+.add-remove {
+    padding: 8px;
+    border: 1px solid grey;
+    cursor: pointer;
+}
+
+.add-remove:hover {
+    border: 1px solid #156088;
+}
+
+.basket-finance {
+    display: flex;
+    flex-direction: column;
+    margin-top: 12px;
+    margin-bottom: 12px;
+}
+
+.basket-finance-line {
+    display: flex;
+    justify-content: space-between;
+    padding-top: 8px;
+    padding-bottom: 8px;
+}
+
+.basket button {
+    width: 100%;
+    height: 80px;
+    border: none;
+    background-color: #166088;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.basket button:hover {
+    background-color: #216f99;
+}
+
+.basket button:active {
+    background-color: #135579;
+}
+
+.shopping-basket-overlay {
+    background-color: white;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    overflow-y: scroll;
+}
