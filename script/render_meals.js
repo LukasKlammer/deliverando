@@ -1,6 +1,11 @@
 function render() {
     renderMealCategoryLinks(); // rendert den Scroll-Container mit den Links zu den meal-Kategorien
     renderMealsContainer(); // rendert den zentralen Container mit den Kategorien und den Mahlzeiten
+    renderBasketElements(); // rendert nur die Elemente, die mit dem Warenkorb zu tun haben
+}
+
+
+function renderBasketElements() {
     writePriceToButton(); // schreibt den Preis in den button "Warenkorb öffnen" in der responsive-Ansicht
     renderShoppingBasketRight(); // rendert den Warenkorb rechts (Inhalt, Preis, Buttons usw.)
     renderShoppingBasketOverlay(); // rendert das Warenkorb-Overlay
@@ -52,7 +57,7 @@ function renderMeal(category, mealsContainer) {
         const selectedFood = selectedFoods[i]; // eigene Variable selectedFood, die sich bei jedem Durchlauf ändert -- macht es übersichtlicher
         const price = selectedFood['price'].toFixed(2);
         mealsContainer.innerHTML += /*html*/ `
-            <div class="meal" onclick="addMeal('${selectedFood['name']}', ${selectedFood['price']})">
+            <div class="meal" id="${selectedFood['name']}" onclick="addMeal('${selectedFood['name']}', ${selectedFood['price']})">
                 <div>
                     <h3 class="meal-name">${selectedFood['name']}</h3>
                     <span class="meal-ingredients">${selectedFood['ingredients']}</span><br>

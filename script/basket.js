@@ -2,6 +2,7 @@ let basket = [];
 
 
 function addMeal(name, price) { // Element dem Warenkorb hinzufügen
+    animationOnChooseMeal(name);
     if (basket.some(item => item.name === name)) {
         increaseBasketElement(name); // if true --> dann Anzahl des bereits hinzugefügten Elements erhöhen
     } else {
@@ -19,7 +20,7 @@ function addToBasket(name, price) {
         'note': '',
     };
     basket.push(addData);
-    render();
+    renderBasketElements(); // rendert die Elemente aus Warenkorb und dem Warenkorb-öffnen in der responsive Ansicht
 }
 
 
@@ -31,7 +32,7 @@ function removeFromBasket(indexOfElement) { // Element aus Warenkorb entfernen
 function increaseBasketElement(name) {
     let indexOfElement = basket.findIndex(item => item.name == name);
     basket[indexOfElement].amount = basket[indexOfElement].amount + 1;
-    render();
+    renderBasketElements(); // rendert die Elemente aus Warenkorb und dem Warenkorb-öffnen in der responsive Ansicht
 }
 
 
@@ -43,7 +44,15 @@ function decreaseBasketElement(name) {
     else { // sonst Element aus Warenkorb entfernen (wir wollen keine 0)
         removeFromBasket(indexOfElement);
     }
-    render();
+    renderBasketElements(); // rendert die Elemente aus Warenkorb und dem Warenkorb-öffnen in der responsive Ansicht
+}
+
+
+function animationOnChooseMeal(name) {
+    document.getElementById(name).classList.add('meal-onclick-animation');
+    setTimeout(() => {
+        document.getElementById(name).classList.remove('meal-onclick-animation');
+    }, 125);
 }
 
 
