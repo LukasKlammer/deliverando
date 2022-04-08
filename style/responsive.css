@@ -93,6 +93,20 @@
     .meal-categories-toborder {
         display: none;
     }
+
+    @keyframes pushShow {
+        0% {
+            transform: scale(1);
+        }
+    
+        50% {
+            transform: scale(0.95);
+        }
+    
+        0% {
+            transform: scale(1);
+        }
+    }
 }
 
 @media (max-width: 330px) { 
@@ -101,3 +115,5 @@
         flex-direction: column-reverse;
     }
 }
+
+
