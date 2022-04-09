@@ -55,7 +55,7 @@ function renderMeal(category, mealsContainer) {
 
     for (let i = 0; i < selectedFoods.length; i++) { // durchläuft das eigene Array, wo nur mehr die Elemente der gesuchten Kategorie drin sind
         const selectedFood = selectedFoods[i]; // eigene Variable selectedFood, die sich bei jedem Durchlauf ändert -- macht es übersichtlicher
-        const price = selectedFood['price'].toFixed(2);
+        const price = selectedFood['price'].toFixed(2).replace('.', ',');
         mealsContainer.innerHTML += /*html*/ `
             <div class="meal" id="${selectedFood['name']}" onclick="addMeal('${selectedFood['name']}', ${selectedFood['price']})">
                 <div>

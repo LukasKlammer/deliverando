@@ -97,12 +97,13 @@ function renderBasketMeals(basketContainer) { // alle Mahlzeiten im Warenkorb re
     for (let i = 0; i < basket.length; i++) {
         const basketElement = basket[i];
         const subtotal = basketElement['price'] * basketElement['amount'];
+        const formattedSubtotal = subtotal.toFixed(2).replace('.', ',');
         basketContainer.innerHTML += /*html*/ `
             <div class="basket-meal">
                 <div class="amount-name-price">
                     <span class="basket-item-amount">${basketElement.amount}</span>
                     <h4>${basketElement.name}</h4>
-                    <span class="basket-item-price">${subtotal.toFixed(2)} €</span>
+                    <span class="basket-item-price">${formattedSubtotal} €</span>
                 </div>
                 <div class="note-add-remove">
                     <a onclick="openNoteInput(${i})">Anmerkung hinzufügen</a>
@@ -127,26 +128,26 @@ function renderBasketMeals(basketContainer) { // alle Mahlzeiten im Warenkorb re
 
 function renderBasketFinance(basketContainer) { // Finanz-Informationen anzeigen
     const costs = calculateBasketFinance(); // Objekt aus dem return-Statement der Funktion rausholen und der Variable costs zuweisen
-    const subtotal = costs.subtotal; // einzelne Variablen aus dem Objekt holen und neuer Variable zuweisen (übersichtlicher)
-    const deliveryCosts = costs.deliveryCosts;
-    const totalPrice = costs.totalPrice;
+    const formattedSubtotal = costs['subtotal'].toFixed(2).replace('.', ','); // einzelne Variablen aus dem Objekt holen und neuer Variable zuweisen (übersichtlicher)
+    const formattedDeliveryCosts = costs['deliveryCosts'].toFixed(2).replace('.', ',');
+    const formattedTotalPrice = costs['totalPrice'].toFixed(2).replace('.', ',');
 
     basketContainer.innerHTML += /*html*/ `
     <div class="basket-finance">
         <div class="basket-finance-line">
             <span>Zwischensumme</span>
-            <span>${subtotal.toFixed(2)} €</span>
+            <span>${formattedSubtotal} €</span>
         </div>
         <div class="basket-finance-line">
             <span>Lieferkosten</span>
-            <span>${deliveryCosts.toFixed(2)} €</span>
+            <span>${formattedDeliveryCosts} €</span>
         </div>
         <div class="basket-finance-line">
             <span><b>Gesamt</b></span>
-            <span><b>${totalPrice.toFixed(2)} €</b></span>
+            <span><b>${formattedTotalPrice} €</b></span>
         </div>
     </div>
-    <button onclick="orderAll()">Bezahlen (${totalPrice.toFixed(2)} €)</button>
+    <button onclick="orderAll()">Bezahlen (${formattedTotalPrice} €)</button>
 `;
 }
 
@@ -191,7 +192,8 @@ function orderAll() {
 
 function writePriceToButton() {
     const costs = calculateBasketFinance();
-    document.getElementById('button-open-basket-price').innerHTML = `(${costs.subtotal.toFixed(2)} €)`;
+    const formattedCosts = costs['subtotal'].toFixed(2).replace('.', ',')
+    document.getElementById('button-open-basket-price').innerHTML = `(${formattedCosts} €)`;
 }
 
 
